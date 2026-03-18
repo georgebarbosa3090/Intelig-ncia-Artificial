@@ -39,19 +39,19 @@ Obs: talvez agora esteja mais claro o significado do nome “KNN”, que refere-
 Agora recebemos outra amostra que queremos classificar:
 
 <p align="center">
-  <img src="KNN/KNN5.png" width="300"/>
+  <img src="KNN/KNN6.png" width="300"/>
 </p>
 
 Utilizando o mesmo método KNN com k=3:
 
 <p align="center">
-  <img src="KNN/KNN6.png" width="300"/>
+  <img src="KNN/KNN7.png" width="300"/>
 </p>
 
 Encontramos os 3 vizinhos mais próximos dessa amostra. Dessa vez, há duas amostras da classe vermelha e uma da classe azul. Como a votação ficou 2×1 para a classe vermelha, essa amostra ficaria sendo classificada nessa classe:
 
 <p align="center">
-  <img src="KNN/KNN7.png" width="300"/>
+  <img src="KNN/KNN8.png" width="300"/>
 </p>
 
 Essa metodologia poderia ser aplicada para qualquer nova amostra e estaríamos aptos a definir sua devida classificação. Porém até agora utilizamos apenas o exemplo de k=3. Na prática, podemos escolher outro valor de k.
@@ -59,13 +59,13 @@ Essa metodologia poderia ser aplicada para qualquer nova amostra e estaríamos a
 Vamos supor que a mesma amostra anterior estivesse sendo analisada com o algoritmo de KNN com k=5:
 
 <p align="center">
-  <img src="KNN/KNN8.png" width="300"/>
+  <img src="KNN/KNN9.png" width="300"/>
 </p>
 
 Dessa vez, dos 5 vizinhos mais próximos, 3 são azuis e 2 são vermelhos. Portanto a classe vencedora foi a azul. Essa amostra seria classificada nessa classe:
 
 <p align="center">
-  <img src="KNN/KNN9.png" width="300"/>
+  <img src="KNN/KNN10.png" width="300"/>
 </p>
 
 Nota-se que, dependendo do valor de k, poderemos ter resultados diferentes para cada situação.
