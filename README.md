@@ -9,10 +9,8 @@ Em resumo, o KNN tenta classificar cada amostra de um conjunto de dados avaliand
 
 Para entender como o KNN funciona detalhadamente, primeiro considere que temos um conjunto de dados dividido em duas classes: azul e vermelho, conforme a figura abaixo.
 
-![KNN](KNN/KNN1.png)
-
 <p align="center">
-  <img src="KNN/KNN1.png" width="600"/>
+  <img src="KNN/KNN1.png" width="200"/>
 </p>
 
 Agora recebemos uma amostra que ainda não está classificada, e gostaríamos de definir se ela pertence à classe azul ou à classe vermelha. Digamos que essa nova amostra (cor verde na figura abaixo) esteja localizada nessa região:
