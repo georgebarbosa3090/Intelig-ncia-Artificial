@@ -11,6 +11,10 @@ Para entender como o KNN funciona detalhadamente, primeiro considere que temos u
 
 ![KNN](KNN/KNN1.png)
 
+<p align="center">
+  <img src="KNN/KNN1.png" width="600"/>
+</p>
+
 Agora recebemos uma amostra que ainda não está classificada, e gostaríamos de definir se ela pertence à classe azul ou à classe vermelha. Digamos que essa nova amostra (cor verde na figura abaixo) esteja localizada nessa região:
 
 ![KNN](KNN/KNN2.png)
