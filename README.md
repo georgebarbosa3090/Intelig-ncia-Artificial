@@ -246,34 +246,9 @@ Mostra o resultado final.
 
 ---
 
-## 🧪 Sugestões de experimentos
-
-* Alterar o valor de `k` (1, 3, 5)
-* Adicionar mais pontos
-* Testar outros datasets
-* Normalizar os dados
-
----
-
-## 🎓 Uso educacional
-
-Este projeto é ideal para:
-
-* Aulas de Machine Learning
-* Introdução à Inteligência Artificial
-* Cursos técnicos e graduação (ex: IFPA)
-
----
-
 ## 📌 Autor
 
 George Barbosa
-Projeto educacional para ensino de IA aplicada.
 
----
-
-## ⭐ Contribuição
-
-Sinta-se livre para abrir issues ou enviar pull requests!
 
 ---
