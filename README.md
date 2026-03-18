@@ -8,11 +8,12 @@ O KNN é muito utilizado em problemas de classificação, e felizmente é um dos
 Em resumo, o KNN tenta classificar cada amostra de um conjunto de dados avaliando sua distância em relação aos vizinhos mais próximos. Se os vizinhos mais próximos forem majoritariamente de uma classe, a amostra em questão será classificada nesta categoria.
 
 Para entender como o KNN funciona detalhadamente, primeiro considere que temos um conjunto de dados dividido em duas classes: azul e vermelho, conforme a figura abaixo.
+
 ![KNN](KNN/KNN1.png)
 
 Agora recebemos uma amostra que ainda não está classificada, e gostaríamos de definir se ela pertence à classe azul ou à classe vermelha. Digamos que essa nova amostra (cor verde na figura abaixo) esteja localizada nessa região:
 
-![KNN](images/knn_plot.png)
+![KNN](KNN/KNN2.png)
 
 Intuitivamente, podemos observar que faz mais sentido classificar essa amostra como pertencendo à classe vermelha. Mas o algoritmo não possui “intuição”, ele precisa de um cálculo matemático para poder definir a solução.
 
@@ -20,34 +21,34 @@ No caso do KNN, a lógica é a seguinte:
 
 Observa-se a classe dos vizinhos mais próximos, em uma votação onde a maioria vence. Por exemplo, vamos supor que estamos analisando os 3 vizinhos mais próximos. Obs: mais próximo significa com a menor distância em relação à amostra:
 
-![KNN](images/knn_plot.png)
+![KNN](KNN/KNN3.png)
 
 Na figura acima, podemos ver que os 3 vizinhos mais próximos pertencem à classe vermelha. Então como houve 3 votos a zero para a classe vermelha, essa amostra fica sendo classificada nessa classe:
 
-![KNN](images/knn_plot.png)
+![KNN](KNN/KNN4.png)
 
 Obs: talvez agora esteja mais claro o significado do nome “KNN”, que refere-se a “k-vizinhos mais próximos”, onde k é um número que podemos determinar. Nesse exemplo, estamos usando k=3.
 Agora recebemos outra amostra que queremos classificar:
 
-<img width="387" height="379" alt="image" src="https://github.com/user-attachments/assets/d31211f8-0d74-463e-8003-90d701b4dd33" />
+![KNN](KNN/KNN5.png)
 
 Utilizando o mesmo método KNN com k=3:
 
-![KNN](images/knn_plot.png)
+![KNN](KNN/KNN6.png)
 
 Encontramos os 3 vizinhos mais próximos dessa amostra. Dessa vez, há duas amostras da classe vermelha e uma da classe azul. Como a votação ficou 2×1 para a classe vermelha, essa amostra ficaria sendo classificada nessa classe:
 
-![KNN](images/knn_plot.png)
+![KNN](KNN/KNN7.png)
 
 Essa metodologia poderia ser aplicada para qualquer nova amostra e estaríamos aptos a definir sua devida classificação. Porém até agora utilizamos apenas o exemplo de k=3. Na prática, podemos escolher outro valor de k.
 
 Vamos supor que a mesma amostra anterior estivesse sendo analisada com o algoritmo de KNN com k=5:
 
-![KNN](images/knn_plot.png)
+![KNN](KNN/KNN8.png)
 
 Dessa vez, dos 5 vizinhos mais próximos, 3 são azuis e 2 são vermelhos. Portanto a classe vencedora foi a azul. Essa amostra seria classificada nessa classe:
 
-![KNN](images/knn_plot.png)
+![KNN](KNN/KNN9.png)
 
 Nota-se que, dependendo do valor de k, poderemos ter resultados diferentes para cada situação.
 
