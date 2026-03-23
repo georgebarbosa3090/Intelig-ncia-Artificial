@@ -2,8 +2,7 @@
 
 ## 🎯 Introdução
 
-A **Análise Exploratória de Dados (EDA – Exploratory Data Analysis)** é uma etapa fundamental em qualquer projeto de Ciência de Dados. Seu principal objetivo é **compreender os dados antes da modelagem**, identificando padrões, inconsistências, tendências e relações entre variáveis.
-A **Análise Exploratória de Dados (EDA)** é o processo de investigar e analisar conjuntos de dados para compreender suas características principais, frequentemente utilizando métodos de visualização e estatística descritiva. O objetivo central é **construir uma compreensão intuitiva dos dados** sem necessariamente ter vivido a experiência de coleta, permitindo identificar padrões, detectar anomalias (outliers) e testar hipóteses antes de aplicar modelos complexos de aprendizado de máquina.
+A **Análise Exploratória de Dados (EDA – Exploratory Data Analysis)** é uma etapa fundamental em qualquer projeto de Ciência de Dados. Seu principal objetivo é **compreender os dados antes da modelagem**, identificando padrões, inconsistências, tendências e relações entre variáveis. É o processo de investigar e analisar conjuntos de dados para compreender suas características principais, frequentemente utilizando métodos de visualização e estatística descritiva. O objetivo central é **construir uma compreensão intuitiva dos dados** sem necessariamente ter vivido a experiência de coleta, permitindo identificar padrões, detectar anomalias (outliers) e testar hipóteses antes de aplicar modelos complexos de aprendizado de máquina.
 
 Abaixo estão os principais componentes e etapas de uma EDA detalhada conforme as fontes:
 
