@@ -1,333 +1,313 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "id": "aeb30e23",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "# 📊 Análise Exploratória de Dados (EDA) com Python\n",
-    "\n",
-    "## 🎯 Introdução\n",
-    "\n",
-    "A **Análise Exploratória de Dados (EDA – Exploratory Data Analysis)** é uma etapa fundamental em qualquer projeto de Ciência de Dados. Seu principal objetivo é **compreender os dados antes da modelagem**, identificando padrões, inconsistências, tendências e relações entre variáveis.\n",
-    "\n",
-    "A EDA envolve o uso de técnicas estatísticas e visuais para extrair insights iniciais, sendo considerada uma fase essencial para garantir qualidade nos resultados de modelos de Machine Learning. ([ia-labs.com.br][1])\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🧠 Objetivos da EDA\n",
-    "\n",
-    "* Entender a estrutura dos dados\n",
-    "* Identificar valores nulos ou inconsistentes\n",
-    "* Detectar outliers\n",
-    "* Analisar distribuição das variáveis\n",
-    "* Descobrir relações entre variáveis\n",
-    "\n",
-    "📌 Em termos práticos:\n",
-    "\n",
-    "> A EDA é o processo de “fazer perguntas aos dados”.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🧰 Bibliotecas utilizadas\n",
-    "\n",
-    "```python\n",
-    "import pandas as pd\n",
-    "import matplotlib.pyplot as plt\n",
-    "import seaborn as sns\n",
-    "```\n",
-    "\n",
-    "### 🔍 Explicação linha por linha\n",
-    "\n",
-    "```python\n",
-    "import pandas as pd\n",
-    "```\n",
-    "\n",
-    "* Importa a biblioteca **Pandas**\n",
-    "* Usada para manipulação de dados em formato de tabela (DataFrame)\n",
-    "\n",
-    "```python\n",
-    "import matplotlib.pyplot as plt\n",
-    "```\n",
-    "\n",
-    "* Biblioteca para criação de gráficos\n",
-    "* `plt` é um apelido padrão\n",
-    "\n",
-    "```python\n",
-    "import seaborn as sns\n",
-    "```\n",
-    "\n",
-    "* Biblioteca de visualização baseada no matplotlib\n",
-    "* Facilita criação de gráficos estatísticos\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📥 Leitura do dataset\n",
-    "\n",
-    "```python\n",
-    "df = pd.read_csv(\"dados.csv\")\n",
-    "```\n",
-    "\n",
-    "### 🔍 Explicação\n",
-    "\n",
-    "* `read_csv()` → lê arquivos CSV\n",
-    "* `df` → DataFrame (estrutura tabular com linhas e colunas)\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🔎 Visualização inicial dos dados\n",
-    "\n",
-    "```python\n",
-    "df.head()\n",
-    "```\n",
-    "\n",
-    "* Mostra as **5 primeiras linhas**\n",
-    "* Útil para entender a estrutura inicial\n",
-    "\n",
-    "```python\n",
-    "df.tail()\n",
-    "```\n",
-    "\n",
-    "* Mostra as **últimas linhas**\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📊 Estrutura dos dados\n",
-    "\n",
-    "```python\n",
-    "df.info()\n",
-    "```\n",
-    "\n",
-    "### 🔍 Explicação\n",
-    "\n",
-    "* Mostra:\n",
-    "\n",
-    "  * Tipos de dados (int, float, object)\n",
-    "  * Valores não nulos\n",
-    "  * Quantidade de colunas\n",
-    "\n",
-    "---\n",
-    "\n",
-    "```python\n",
-    "df.describe()\n",
-    "```\n",
-    "\n",
-    "### 🔍 Explicação\n",
-    "\n",
-    "Gera estatísticas básicas:\n",
-    "\n",
-    "* média\n",
-    "* desvio padrão\n",
-    "* mínimo e máximo\n",
-    "* quartis\n",
-    "\n",
-    "👉 Essencial para análise quantitativa\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🧹 Limpeza de dados\n",
-    "\n",
-    "```python\n",
-    "df.isnull().sum()\n",
-    "```\n",
-    "\n",
-    "### 🔍 Explicação\n",
-    "\n",
-    "* Verifica valores nulos\n",
-    "* `.sum()` conta quantos existem\n",
-    "\n",
-    "---\n",
-    "\n",
-    "```python\n",
-    "df.dropna()\n",
-    "```\n",
-    "\n",
-    "* Remove linhas com valores nulos\n",
-    "\n",
-    "---\n",
-    "\n",
-    "```python\n",
-    "df.fillna(0)\n",
-    "```\n",
-    "\n",
-    "* Substitui valores nulos por 0\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🔄 Manipulação de dados\n",
-    "\n",
-    "```python\n",
-    "df['coluna'].unique()\n",
-    "```\n",
-    "\n",
-    "* Retorna valores únicos\n",
-    "\n",
-    "---\n",
-    "\n",
-    "```python\n",
-    "df['coluna'].nunique()\n",
-    "```\n",
-    "\n",
-    "* Conta valores únicos\n",
-    "\n",
-    "---\n",
-    "\n",
-    "```python\n",
-    "df.sort_values(by='coluna')\n",
-    "```\n",
-    "\n",
-    "* Ordena os dados\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📈 Visualização de dados\n",
-    "\n",
-    "### 📊 Histograma\n",
-    "\n",
-    "```python\n",
-    "df['idade'].hist()\n",
-    "```\n",
-    "\n",
-    "* Mostra distribuição dos dados\n",
-    "\n",
-    "---\n",
-    "\n",
-    "### 📦 Boxplot\n",
-    "\n",
-    "```python\n",
-    "sns.boxplot(x=df['idade'])\n",
-    "```\n",
-    "\n",
-    "* Identifica outliers\n",
-    "\n",
-    "---\n",
-    "\n",
-    "### 🔵 Scatter Plot\n",
-    "\n",
-    "```python\n",
-    "plt.scatter(df['x'], df['y'])\n",
-    "```\n",
-    "\n",
-    "* Mostra relação entre duas variáveis\n",
-    "\n",
-    "---\n",
-    "\n",
-    "### 🔥 Heatmap (correlação)\n",
-    "\n",
-    "```python\n",
-    "sns.heatmap(df.corr(), annot=True)\n",
-    "```\n",
-    "\n",
-    "### 🔍 Explicação\n",
-    "\n",
-    "* `corr()` → calcula correlação\n",
-    "* `heatmap()` → mostra visualmente\n",
-    "\n",
-    "👉 Muito usado para Machine Learning\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🔗 Relação entre variáveis\n",
-    "\n",
-    "```python\n",
-    "sns.pairplot(df)\n",
-    "```\n",
-    "\n",
-    "* Mostra relações entre todas as variáveis\n",
-    "* Muito usado em EDA inicial\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📊 Interpretação (parte mais importante)\n",
-    "\n",
-    "A EDA não é apenas código — é análise.\n",
-    "\n",
-    "Durante essa etapa, o analista deve responder:\n",
-    "\n",
-    "* Existe padrão nos dados?\n",
-    "* Há correlação entre variáveis?\n",
-    "* Existem dados inconsistentes?\n",
-    "* Os dados estão balanceados?\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🎓 Conexão com os vídeos\n",
-    "\n",
-    "[Análise Exploratória de Dados - Aula prática](https://www.youtube.com/watch?v=woObL4Mx9ns&utm_source=chatgpt.com)\n",
-    "\n",
-    "Os vídeos demonstram exatamente esse fluxo:\n",
-    "\n",
-    "1. Carregamento dos dados\n",
-    "2. Limpeza e organização\n",
-    "3. Análise estatística\n",
-    "4. Visualização gráfica\n",
-    "5. Interpretação\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## ☁️ Uso no Google Colab\n",
-    "\n",
-    "O Google Colab permite executar esse processo diretamente no navegador:\n",
-    "\n",
-    "### 📌 Vantagens:\n",
-    "\n",
-    "* Não precisa instalar nada\n",
-    "* Execução por células\n",
-    "* Ideal para EDA\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🚀 Pipeline completo de EDA\n",
-    "\n",
-    "```python\n",
-    "import pandas as pd\n",
-    "import matplotlib.pyplot as plt\n",
-    "import seaborn as sns\n",
-    "\n",
-    "df = pd.read_csv(\"dados.csv\")\n",
-    "\n",
-    "print(df.head())\n",
-    "print(df.info())\n",
-    "print(df.describe())\n",
-    "\n",
-    "df.isnull().sum()\n",
-    "\n",
-    "sns.heatmap(df.corr(), annot=True)\n",
-    "plt.show()\n",
-    "```\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 🧠 Conclusão\n",
-    "\n",
-    "A Análise Exploratória de Dados é uma etapa **crítica e indispensável** na ciência de dados, pois:\n",
-    "\n",
-    "* Evita erros na modelagem\n",
-    "* Garante qualidade dos dados\n",
-    "* Permite descobrir insights ocultos\n",
-    "* Orienta decisões\n",
-    "\n",
-    "📌 Sem EDA, qualquer modelo de Machine Learning está comprometido.\n",
-    "\n",
-    "---\n",
-    "\n",
-    "## 📌 Autor\n",
-    "\n",
-    "Material estruturado para ensino e uso acadêmico (IFPA / Ciência de Dados)\n",
-    "\n",
-    "---\n",
-    "\n",
-    "[1]: https://ia-labs.com.br/cursos/analise-exploratoria-de-dados-python/?utm_source=chatgpt.com \"Análise Exploratória de Dados (python) – IA-Labs\"\n"
-   ]
-  }
- ],
- "metadata": {
-  "language_info": {
-   "name": "python"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+# 📊 Análise Exploratória de Dados (EDA) com Python
+
+## 🎯 Introdução
+
+A **Análise Exploratória de Dados (EDA – Exploratory Data Analysis)** é uma etapa fundamental em qualquer projeto de Ciência de Dados. Seu principal objetivo é **compreender os dados antes da modelagem**, identificando padrões, inconsistências, tendências e relações entre variáveis.
+
+A EDA envolve o uso de técnicas estatísticas e visuais para extrair insights iniciais, sendo considerada uma fase essencial para garantir qualidade nos resultados de modelos de Machine Learning. ([ia-labs.com.br][1])
+
+---
+
+## 🧠 Objetivos da EDA
+
+* Entender a estrutura dos dados
+* Identificar valores nulos ou inconsistentes
+* Detectar outliers
+* Analisar distribuição das variáveis
+* Descobrir relações entre variáveis
+
+📌 Em termos práticos:
+
+> A EDA é o processo de “fazer perguntas aos dados”.
+
+---
+
+## 🧰 Bibliotecas utilizadas
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+### 🔍 Explicação linha por linha
+
+```python
+import pandas as pd
+```
+
+* Importa a biblioteca **Pandas**
+* Usada para manipulação de dados em formato de tabela (DataFrame)
+
+```python
+import matplotlib.pyplot as plt
+```
+
+* Biblioteca para criação de gráficos
+* `plt` é um apelido padrão
+
+```python
+import seaborn as sns
+```
+
+* Biblioteca de visualização baseada no matplotlib
+* Facilita criação de gráficos estatísticos
+
+---
+
+## 📥 Leitura do dataset
+
+```python
+df = pd.read_csv("dados.csv")
+```
+
+### 🔍 Explicação
+
+* `read_csv()` → lê arquivos CSV
+* `df` → DataFrame (estrutura tabular com linhas e colunas)
+
+---
+
+## 🔎 Visualização inicial dos dados
+
+```python
+df.head()
+```
+
+* Mostra as **5 primeiras linhas**
+* Útil para entender a estrutura inicial
+
+```python
+df.tail()
+```
+
+* Mostra as **últimas linhas**
+
+---
+
+## 📊 Estrutura dos dados
+
+```python
+df.info()
+```
+
+### 🔍 Explicação
+
+* Mostra:
+
+  * Tipos de dados (int, float, object)
+  * Valores não nulos
+  * Quantidade de colunas
+
+---
+
+```python
+df.describe()
+```
+
+### 🔍 Explicação
+
+Gera estatísticas básicas:
+
+* média
+* desvio padrão
+* mínimo e máximo
+* quartis
+
+👉 Essencial para análise quantitativa
+
+---
+
+## 🧹 Limpeza de dados
+
+```python
+df.isnull().sum()
+```
+
+### 🔍 Explicação
+
+* Verifica valores nulos
+* `.sum()` conta quantos existem
+
+---
+
+```python
+df.dropna()
+```
+
+* Remove linhas com valores nulos
+
+---
+
+```python
+df.fillna(0)
+```
+
+* Substitui valores nulos por 0
+
+---
+
+## 🔄 Manipulação de dados
+
+```python
+df['coluna'].unique()
+```
+
+* Retorna valores únicos
+
+---
+
+```python
+df['coluna'].nunique()
+```
+
+* Conta valores únicos
+
+---
+
+```python
+df.sort_values(by='coluna')
+```
+
+* Ordena os dados
+
+---
+
+## 📈 Visualização de dados
+
+### 📊 Histograma
+
+```python
+df['idade'].hist()
+```
+
+* Mostra distribuição dos dados
+
+---
+
+### 📦 Boxplot
+
+```python
+sns.boxplot(x=df['idade'])
+```
+
+* Identifica outliers
+
+---
+
+### 🔵 Scatter Plot
+
+```python
+plt.scatter(df['x'], df['y'])
+```
+
+* Mostra relação entre duas variáveis
+
+---
+
+### 🔥 Heatmap (correlação)
+
+```python
+sns.heatmap(df.corr(), annot=True)
+```
+
+### 🔍 Explicação
+
+* `corr()` → calcula correlação
+* `heatmap()` → mostra visualmente
+
+👉 Muito usado para Machine Learning
+
+---
+
+## 🔗 Relação entre variáveis
+
+```python
+sns.pairplot(df)
+```
+
+* Mostra relações entre todas as variáveis
+* Muito usado em EDA inicial
+
+---
+
+## 📊 Interpretação (parte mais importante)
+
+A EDA não é apenas código — é análise.
+
+Durante essa etapa, o analista deve responder:
+
+* Existe padrão nos dados?
+* Há correlação entre variáveis?
+* Existem dados inconsistentes?
+* Os dados estão balanceados?
+
+---
+
+## 🎓 Conexão com os vídeos
+
+[Análise Exploratória de Dados - Aula prática](https://www.youtube.com/watch?v=woObL4Mx9ns&utm_source=chatgpt.com)
+
+Os vídeos demonstram exatamente esse fluxo:
+
+1. Carregamento dos dados
+2. Limpeza e organização
+3. Análise estatística
+4. Visualização gráfica
+5. Interpretação
+
+---
+
+## ☁️ Uso no Google Colab
+
+O Google Colab permite executar esse processo diretamente no navegador:
+
+### 📌 Vantagens:
+
+* Não precisa instalar nada
+* Execução por células
+* Ideal para EDA
+
+---
+
+## 🚀 Pipeline completo de EDA
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("dados.csv")
+
+print(df.head())
+print(df.info())
+print(df.describe())
+
+df.isnull().sum()
+
+sns.heatmap(df.corr(), annot=True)
+plt.show()
+```
+
+---
+
+## 🧠 Conclusão
+
+A Análise Exploratória de Dados é uma etapa **crítica e indispensável** na ciência de dados, pois:
+
+* Evita erros na modelagem
+* Garante qualidade dos dados
+* Permite descobrir insights ocultos
+* Orienta decisões
+
+📌 Sem EDA, qualquer modelo de Machine Learning está comprometido.
+
+---
+
+## 📌 Autor
+
+Material estruturado para ensino e uso acadêmico (IFPA / Ciência de Dados)
+
+---
+
+[1]: https://ia-labs.com.br/cursos/analise-exploratoria-de-dados-python/?utm_source=chatgpt.com "Análise Exploratória de Dados (python) – IA-Labs"
